@@ -42,12 +42,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'core.urls'
 
-PROD = False
+PROD = True
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, '../frontend')] if PROD else [os.path.join(BASE_DIR, '../frontend')],
+        'DIRS': [os.path.join("/home/billok/frontend/frontend-workdir/testing-frontend-deployement/testing-frontend-deployement")] if PROD else [os.path.join(BASE_DIR, '../frontend')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -112,9 +112,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, '../frontend', "build",
-                 "static") if PROD else os.path.join(BASE_DIR, '../frontend', "build",
-                                                     "static"),  # update the STATICFILES_DIRS
+    os.path.join("/home/billok/frontend/frontend-workdir/testing-frontend-deployement/testing-frontend-deployement/build/static") if PROD else os.path.join(BASE_DIR, '../frontend', "build",
+                                                                                                                                                            "static"),  # update the STATICFILES_DIRS
 )
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
