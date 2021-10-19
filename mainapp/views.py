@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import api_view
-
+from django.conf import settings
 # This will return a list of books
 
 
@@ -14,4 +14,7 @@ def book(request):
 
 
 def index(request):
+    dir = settings.BASE_DIR
+    # import pdb
+    # pdb.set_trace()
     return render(request, "build/index.html")
