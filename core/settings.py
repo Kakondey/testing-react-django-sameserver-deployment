@@ -48,7 +48,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # 'DIRS': ["/home/billok/frontend/frontend-workdir/testing-frontend-deployement/testing-frontend-deployement"],
-        'DIRS': [os.path.join(BASE_DIR, '../../../../frontend/frontend-workdir/testing-frontend-deployement/testing-frontend-deployement')],
+        'DIRS': ["/home/billok/frontend/frontend-workdir/testing-frontend-deployement/testing-frontend-deployement"] if PROD else [os.path.join(BASE_DIR, '../frontend')],
         # 'DIRS': [os.path.join(BASE_DIR, '../frontend')],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -113,15 +113,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "../../../../frontend/frontend-workdir/testing-frontend-deployement/testing-frontend-deployement", "build",
-                           "static")
-# STATICFILES_DIRS = (
-#     # "/home/billok/frontend/frontend-workdir/testing-frontend-deployement/testing-frontend-deployement/build/static",
-#     os.path.join(BASE_DIR, '../../../../frontend/frontend-workdir/testing-frontend-deployement/testing-frontend-deployement', "build",
-#                  "static"),
-#     # os.path.join(BASE_DIR, '../frontend', "build",
-#     #              "static"),
-# )
+# STATIC_ROOT = os.path.join(BASE_DIR, "../../../../frontend/frontend-workdir/testing-frontend-deployement/testing-frontend-deployement", "build",
+#                            "static")
+STATIC_ROOT = "/home/billok/frontend/frontend-workdir/testing-frontend-deployement/testing-frontend-deployement/build/static"
+STATICFILES_DIRS = (
+    # "/home/billok/frontend/frontend-workdir/testing-frontend-deployement/testing-frontend-deployement/build/static",
+    os.path.join(BASE_DIR, '../frontend', "build",
+                 "static"),
+)
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
