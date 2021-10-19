@@ -48,7 +48,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # 'DIRS': ["/home/billok/frontend/frontend-workdir/testing-frontend-deployement/testing-frontend-deployement"],
-        'DIRS': ["/home/billok/frontend/frontend-workdir/testing-frontend-deployement/testing-frontend-deployement"] if PROD else [os.path.join(BASE_DIR, '../frontend')],
+        'DIRS': ["/home/billok/frontend/frontend-workdir/testing-frontend-deployement/testing-frontend-deployement"],
         # 'DIRS': [os.path.join(BASE_DIR, '../frontend')],
         'APP_DIRS': True,
         'OPTIONS': {
